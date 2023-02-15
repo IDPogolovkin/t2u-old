@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="rus">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;1,100;1,300;1,400&display=swap"
+        rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/registration/signUp.css">
+    <title>SignUp</title>
+</head>
+
+<body>
+    <div class="all">
+        <img class="imgtop" src="/registration/img/Element 01.svg" alt="">
+        <div class="formBx">
+            <h3>T2U</h3>
+            <div class="form">
+                <div class="inputdiv">
+                    <p class="text">Логин</p>
+
+                    <input class="input" id="email" type="email" placeholder="E-mail">
+                </div>
+                <div class="inputdiv">
+                    <p class="text">Пароль</p>
+                    <input class="input" id="password" type="password" placeholder="Введите пароль">
+                </div>
+                <div class="remember">
+                    <label><input id="check" type="checkbox" name="">
+                        <p>Запомнить меня</p>
+                    </label>
+                </div>
+                <button id="logBtn" class="signbtn">Войти</button>
+                <!-- <button id="logout">logout</button> -->
+                <div class="no-account">
+                    <a href="../forgotPass/emailConf.html" id="resetPas">Забыли пароль?</a>
+                    <div style="display: flex;">
+                        <p>Нет аккаунта?</p>
+                        <a href="/registration/signform.html">Регистрация</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footerimg">
+            <img class="imgf" src="/registration/img/backgroungimg.png" alt="">
+        </div>
+    </div>
+</body>
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.11.0/firebase-app.js";
+    import { getDatabase, set, ref, update } from "https://www.gstatic.com/firebasejs/9.11.0/firebase-database.js";
+    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/9.11.0/firebase-auth.js";
+
+    const firebaseConfig = {
+        apiKey: "AIzaSyCv90cxLFxUiLM7MOx4wIebmTCCCB6ClEo",
+        authDomain: "teach2u-1c73a.firebaseapp.com",
+        projectId: "teach2u-1c73a",
+        storageBucket: "teach2u-1c73a.appspot.com",
+        messagingSenderId: "41398259175",
+        appId: "1:41398259175:web:75dafbca3b5f1c963e4142"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const database = getDatabase(app);
+    const auth = getAuth();
+    logBtn.addEventListener('click', (e) => {
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+        signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                // Signed in 
+                const usir = auth.currentUser;
+                if (usir !== null) {
+                    const emailVerified = usir.emailVerified;
+                    if (emailVerified) {
+                        const user = userCredential.user;
+                        const dt = new Date()
+                        update(ref(database, 'students/' + user.uid), {
+                            last_login: dt,
+                        })
+                        document.location.href = "../Student/RegMain-student/html/index.html"
+                    }
+                    else {
+                        alert("Подтвердите свою почту, пидорас!!!")
+                    }
+                }
+
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                alert(errorMessage)
+            });
+    })
+    const user = auth.currentUser;
+    onAuthStateChanged(auth, (user) => {
+        if (user) {
+            // User is signed in, see docs for a list of available properties
+            // https://firebase.google.com/docs/reference/js/firebase.User
+            const uid = user.uid;
+            // ...
+        } else {
+            // User is signed out
+            // ...
+        }
+    });
+
+</script>
+
+</html>

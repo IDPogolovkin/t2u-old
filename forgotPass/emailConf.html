@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./emailConf.css">
+</head>
+
+<body>
+    <div class="all">
+        <img class="imgtop" src="/registration/img/Element 01.svg" alt="">
+
+        <div class="formBx">
+            <h3>T2U</h3>
+            <div class="form">
+                <input type="email" class="input" name="" placeholder="Введите свою почту" id="emailConf">
+                <button class="signbtn" id="confirmBtn" onclick="openPopStud()">Подтвердить</button>
+            </div>
+        </div>
+        <div class="footerimg">
+            <img class="imgf" src="/registration/img/backgroungimg.png" alt="">
+        </div>
+    </div>
+
+    <div class="popUp" id="popStud">
+        <button style="border: none; outline: none; background: none; margin-top: 5%; margin-left: 90%;" onclick="closePopStud()"><i class="fa-solid fa-circle-xmark" style="font-size: 30px;"></i></button>
+        <h2>Диагностика ваших знаний</h2>
+        <p>Откройте ссылку и пройдите тест<br></p>
+        <p>Это займет не более 10 минут<br></p>
+        <p>Стоимость: 0 <i class="fa-solid fa-sack-dollar" style="font-size: 20px;"></i></p>
+        <!-- <input type="text" class="input-field" placeholder="http://127.0.0.1:5500/Unsigned/Teachers-unsigned/index.html/Queue_calendar/index.html" required> -->
+        <button class="submit" id="confirmBtn" type="button" onclick="closePopStud()">Пройти тест</button>
+    </div>
+</body>
+
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.11.0/firebase-app.js";
+    import { getDatabase, set, ref, update } from "https://www.gstatic.com/firebasejs/9.11.0/firebase-database.js";
+    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/9.11.0/firebase-auth.js";
+
+    const firebaseConfig = {
+        apiKey: "AIzaSyCv90cxLFxUiLM7MOx4wIebmTCCCB6ClEo",
+        authDomain: "teach2u-1c73a.firebaseapp.com",
+        projectId: "teach2u-1c73a",
+        storageBucket: "teach2u-1c73a.appspot.com",
+        messagingSenderId: "41398259175",
+        appId: "1:41398259175:web:75dafbca3b5f1c963e4142"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const database = getDatabase(app);
+    const auth = getAuth();
+
+    let popUp = document.getElementById("popStud");
+    
+            function openPopStud() {
+                popUp.classList.add("open-popstud");
+            }
+    
+            function closePopStud() {
+                popUp.classList.remove("open-popstud");
+            }
+            $(document).ready(function() {
+    
+    
+                var flag = false;
+                $("#confirmBtn").click(function() {
+                    flag = true;
+                });
+                $(".schedule-btn").click(function() {
+                    value = $(this).text();
+                    if (value == "Подтвердить") {
+                        var save = $(this).parent().find("#circle");
+                        save.css("color", "red");
+                        $(this).text("Отменить");
+                    }
+                    if (value == "Отменить") {
+                        var save = $(this).parent().find("#circle");
+                        save.css("color", "#00B012");
+                        $(this).text("Подтвердить");
+                    }
+                });
+            });
+
+    confirmBtn.addEventListener('click', (e) => {
+        var email = document.getElementById("emailConf").value;
+        if (!email) {
+            alert(errorMessage)
+        }
+        else {
+            sendPasswordResetEmail(auth, email)
+                .then(() => {
+                    alert(errorMessage)
+                    // ..
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    alert(errorMessage)
+                    // ..
+                });
+        }
+    });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script src="/Unsigned/Main-unsigned/js/script.js"></script>
+
+</html>

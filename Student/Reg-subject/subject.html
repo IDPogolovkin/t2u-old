@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="rus">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;1,100;1,300;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/afca038480.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="subject.css">
+    <title>Subjects</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light header">
+        <div style="max-width: 80%;" class="container">
+            <a class="navbar-brand" href="#">Teach2U</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+                aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page"
+                            href="/Student/RegMain-student/html/index.html">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Student/Reg-subject/subject.html">Предметы</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Student/Reg-teachers/index.html">Преподаватели</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Student/Reg-support/sup.html">Поддержка</a>
+                    </li>
+                    <li class="nav-item">
+                    </li>
+                </ul>
+                <div class="icons">
+                    <button class="nav-link-btn"><a href="/Student/RegMain-student/html/index.html#beffooter" class="fa fa-shopping-cart"
+                            style="font-size: 20px;"></a></button>
+                    <button class="nav-link-btn"><a href="/Student/notifications/notifications.html"
+                            class="fa-solid fa-bell" style="font-size: 20px;"></a></button>
+                    <button style="color: white;" class="nav-link-btn">3 <a href="#"
+                            class="fa-solid fa-sack-dollar" style="font-size: 20px;"></a></button>
+                    <div class="fa-solid fa-circle-user " id="dropbuttons">
+                        <div class="dropdown">
+                            <div class="dropdown-content">
+
+                                <a href="/Student/homework/homework.html">Мои задания</a>
+                                <a href="/Student/Settings-student/setting_students.html">Настройки</a>
+                                <a href="#">Выход</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="imgsearch">
+        <div class="l_inp">
+            <img class="lupa" src="3.png" alt="">
+            <input class="input" type="text" placeholder="Поиск предметов">
+        </div>
+        <img class="line" src="4.png" alt="">
+    </div>
+    <div class="dropbuttons">
+        <div class="center">
+            <div class="dropdown1">
+                <div class="filter">
+                    <button class="dropbtn" onclick="dropclick()">
+                        <p class="filtertext">Уровень</p>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="#">Новичок</a>
+                        <a href="#">Боец</a>
+                        <a href="#">Ветеран</a>
+                    </div>
+                </div>
+            </div>
+            <div class="dropdown1">
+                <div class="filter">
+                    <button class="dropbtn" onclick="dropclick()">
+                        <p class="filtertext">Класс</p>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="#">5-7 классы</a>
+                        <a href="#">8-9 классы</a>
+                        <a href="#">10-11 классы</a>
+                    </div>
+                </div>
+            </div>
+            <div class="dropdown1">
+                <div class="filter">
+                    <button class="dropbtn" onclick="dropclick()">
+                        <p class="filtertext">Фильтр</p>
+                    </button>
+                    <div class="dropdown-content">
+                        <a style="cursor:pointer;"  id = "phm">Физ-Мат</a>
+                        <a style="cursor:pointer;"  id = "infor">Информатика и программирование</a>
+                        <a style="cursor:pointer;"  id = "gum">Гуманитарные</a>
+                        <a style="cursor:pointer;"  id = "speech">Искусство речи</a>
+                        <a style="cursor:pointer;"  id = "ns">Естесственные науки</a>
+                        <a style="cursor:pointer;"  id = "other">Другие</a>
+                        <a style="cursor:pointer;"  id = "all">Все</a>
+                    </div>
+                </div>
+            </div>
+            <div class="dropdown1">
+                <div class="filter">
+                    <button class="dropbtn" onclick="dropclick()">
+                        <p class="filtertext">Сортировать по</p>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="#">Имени</a>
+                        <a href="#">Дате</a>
+                        <a href="#">Рейтингу</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section id="facilities">
+            <div class="row">
+                <div id = "english" class="col-md-4">
+                    <div class="card text-center">
+                        <img src="engish (1).png" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Английский</h5>
+                            <a href="/Student/Reg-teachers/index.html">Выбрать</a>
+                        </div>
+                    </div>
+                </div>
+                <div id = "math" class="col-md-4">
+                    <div class="card text-center">
+                        <img src="Math.png" class="card-img-top" style="scale: 1.2;">
+                        <div class="card-body">
+                            <h5 class="card-title">Математика</h5>
+                            <a href="/Student/Reg-teachers/index.html">Выбрать</a>
+                        </div>
+                    </div>
+                </div>
+                <div id = "kaz-history" class="col-md-4">
+                    <div class="card text-center">
+                        <img src="History.png" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">История Казахстана</h5>
+                            <a href="/Student/Reg-teachers/index.html">Выбрать</a>
+                        </div>
+                    </div>
+                </div>
+                <div id = "geo" class="col-md-4">
+                    <div class="card text-center">
+                        <img src="Geog.png" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">География</h5>
+                            <a href="/Student/Reg-teachers/index.html">Выбрать</a>
+                        </div>
+                    </div>
+                </div>
+                <div id = "physics" class="col-md-4">
+                    <div class="card text-center">
+                        <img src="Physics.png" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Физика</h5>
+                            <a href="/Student/Reg-teachers/index.html">Выбрать</a>
+                        </div>
+                    </div>
+                </div>
+                <div id = "world-history" class="col-md-4">
+                    <div class="card text-center">
+                        <img src="WorldHis.png" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Всемирная История</h5>
+                            <a href="/Student/Reg-teachers/index.html">Выбрать</a>
+                        </div>
+                    </div>
+                </div>
+                <div id = "psycho" class="col-md-4 lang-subject">
+                    <div class="card text-center">
+                        <img src="psycho.png" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Психология</h5>
+                            <a href="/Student/Reg-teachers/index.html">Выбрать</a>
+                        </div>
+                    </div>
+                </div>
+                <div id = "logoped" class="col-md-4 lang-subject">
+                    <div class="card text-center">
+                        <img src="A.png" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Логопед</h5>
+                            <a href="/Student/Reg-teachers/index.html">Выбрать</a>
+                        </div>
+                    </div>
+                </div>
+                <div id="speech-art" class="col-md-4 lang-subject">
+                    <div class="card text-center">
+                        <img src="speak.png" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Ораторское искусство</h5>
+                            <a href="/Student/Reg-teachers/index.html">Выбрать</a>
+                        </div>
+                    </div>
+                </div>
+                <div id="chess" class="col-md-4 lang-subject">
+                    <div class="card text-center">
+                        <img src="chessboard.png" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Шахматы</h5>
+                            <a href="/Student/Reg-teachers/index.html">Выбрать</a>
+                        </div>
+                    </div>
+                </div>
+                <div id = "cs" class="col-md-4 lang-subject">
+                    <div class="card text-center">
+                        <img src="CS.png" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Информатика</h5>
+                            <a href="/Student/Reg-teachers/index.html">Выбрать</a>
+                        </div>
+                    </div>
+                </div>
+                <div id = "chop" class="col-md-4 lang-subject">
+                    <div class="card text-center">
+                        <img src="law.png" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Основы права</h5>
+                            <a href="/Student/Reg-teachers/index.html">Выбрать</a>
+                        </div>
+                    </div>
+                </div>
+                <div id = "est" class="col-md-4 lang-subject">
+                    <div class="card text-center">
+                        <img src="NS.png" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Естествознание</h5>
+                            <a href="/Student/Reg-teachers/index.html">Выбрать</a>
+                        </div>
+                    </div>
+                </div>
+                <div id = "competitive" class="col-md-4 lang-subject">
+                    <div class="card text-center">
+                        <img src="coding.png" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Спортивное программирование</h5>
+                            <a href="/Student/Reg-teachers/index.html">Выбрать</a>
+                        </div>
+                    </div>
+                </div>
+                <div id = "mental-arithmetics" class="col-md-4 lang-subject">
+                    <div class="card text-center">
+                        <img src="MentalMath.png" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Ментальная Арифметика</h5>
+                            <a href="/Student/Reg-teachers/index.html">Выбрать</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <footer class="footer ">
+        <div class="footer_main ">
+            <div class="info-footer ">
+                <div class="infotext ">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                </div>
+                <div class="footerimg ">
+                    <i class="fa-brands fa-facebook"> </i>
+                    <i class="fa-brands fa-instagram"> </i>
+                    <i class="fa-brands fa-vk"> </i>
+                    <i class="fa-brands fa-whatsapp"> </i>
+                </div>
+            </div>
+            <div class="flinks ">
+                <h2 class="l ">Ссылки</h2>
+                <a class="link " href="/Student/RegMain-student/html/index.html">Главная</a>
+                <a class="link " href="/Student/Reg-subject/subject.html">Предметы</a>
+                <a class="link " href="/Student/Reg-teachers/index.html">Преподаватели</a>
+                <a class="link " href="/Student/Reg-support/sup.html">Помощь</a>
+            </div>
+            <div class="contact ">
+                <h2 class="l ">Связаться с нами</h2>
+                <span class="link ">Phone number</span>
+                <a class="link " href="#">WEB-site</a>
+                <span class="link ">Email</span>
+                <span class="link ">Office</span>
+
+            </div>
+            <div class="faq ">
+                <a class="link " href=" ">FAQ</a>
+            </div>
+        </div>
+        <div class="footer_bot ">
+            <div class="rights ">
+                All Rights Reserved | T2U 2022
+            </div>
+            <div class="p ">
+                <a class="pp " href=" ">Private Policy</a>
+                <div class="private ">
+                    Site <a class="credit " href=" ">Credit</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div id="somth"></div>
+    
+    <script>
+        window.onload = function() {
+            function value(x, y) {
+                return (x + (Math.random() * (y - x)));
+            }
+            var object = " ";
+            for (var i = 0; i < 50; i++) {
+                var a = value(8, 25);
+                object += '<div class="object" style="height: ' + a + 'px; width: ' + a + 'px; background-color: rgba(' + value(0, 300) + ',' + value(0, 300) + ',' + value(0, 300) + '); animation-duration:' + value(10, 30) + 's; top: ' + value(0, 100) + '%; left: ' + value(0, 100) + '%;"></div>'
+            }
+            document.getElementById("somth").innerHTML = object;
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="subject.js"></script>
+    
+</body>
+
+</html>

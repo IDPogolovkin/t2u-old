@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./resetPas.css">
+</head>
+
+<body>
+    <div class="all">
+        <img class="imgtop" src="/registration/img/Element 01.svg" alt="">
+
+        <div class="formBx">
+            <h3>T2U</h3>
+            <div class="form">
+                <input type="text" class="input" placeholder="Новый пароль" onkeyup=compare() id="newConfirm">
+                <input type="text" class="input" placeholder="Подтвердите пароль" onkeyup=compare() id="newConfirm2">
+                <p id="message"></p>
+                <button class="signbtn" id="confirmBtn">Подтвердить</button>
+            </div>
+        </div>
+        <div class="footerimg">
+            <img class="imgf" src="/registration/img/backgroungimg.png" alt="">
+        </div>
+    </div>
+    <script>
+        var compare = function () {
+            if (document.getElementById('newConfirm').value ==
+                document.getElementById('newConfirm2').value) {
+                document.getElementById('message').style.color = 'green';
+                document.getElementById('message').innerHTML = 'Пароли совпадают';
+                document.getElementById('newConfirm').style.borderBlockColor = 'green';
+                document.getElementById('newConfirm2').style.borderBlockColor = 'green';
+                document.getElementById('confirmBtn').disabled = false;
+            } else {
+                document.getElementById('message').style.color = 'red';
+                document.getElementById('message').innerHTML = 'Пароли не совпадают';
+                document.getElementById('newConfirm').style.borderBlockColor = 'red';
+                document.getElementById('newConfirm2').style.borderBlockColor = 'red';
+                document.getElementById('confirmBtn').disabled = true;
+            }
+            if (document.getElementById('newConfirm').value == "" || document.getElementById('newConfirm2').value == "") {
+                document.getElementById('message').innerHTML = null;
+            }
+        }
+    </script>
+</body>
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.11.0/firebase-app.js";
+    import { getDatabase, set, ref, update } from "https://www.gstatic.com/firebasejs/9.11.0/firebase-database.js";
+    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/9.11.0/firebase-auth.js";
+    const firebaseConfig = {
+        apiKey: "AIzaSyCv90cxLFxUiLM7MOx4wIebmTCCCB6ClEo",
+        authDomain: "teach2u-1c73a.firebaseapp.com",
+        projectId: "teach2u-1c73a",
+        storageBucket: "teach2u-1c73a.appspot.com",
+        messagingSenderId: "41398259175",
+        appId: "1:41398259175:web:75dafbca3b5f1c963e4142"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const database = getDatabase(app);
+    const auth = getAuth();
+
+    confirmBtn.addEventListener('click', (e) => {
+        var newpassword = document.getElementById('newConfirm2')
+        update(ref(database, 'students/' + user.uid), {
+            last_login: dt,
+        })
+    })
+</script>
+
+</html>

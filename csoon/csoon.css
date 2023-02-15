@@ -1,0 +1,83 @@
+/* Media Query Mixin*/
+@mixin breakpoint ($breakpoint){
+     @media screen and (max-width: $breakpoint) {
+        @content;
+    }
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: montserrat, sans-serif;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+
+    background-image: url('pexels-books.jpg');
+    background-size: cover;
+    background-position: center;
+
+    position: relative;
+}
+
+body::after{
+    position: absolute;
+    display: block;
+    content: '';
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    background-color: rgba(34, 34, 34, 0.5);
+}
+
+.content{
+    position: relative;
+    z-index: 1;
+}
+
+h1{
+    color: #fff;
+    font-size: 36px;
+    font-weight: 1000;
+    margin: 30px 0px;
+
+@include breakpoint(480px){
+    font-size: 38px;
+}
+}
+
+span{
+    font-weight: 400;
+}
+
+h2{
+    color: #fff;
+    font-size: 42px;
+
+    @include breakpoint(480px){
+        font-size: 56 px;
+    }
+}
+
+.countdown{
+    color: #fff;
+    font-size: 37px;
+    font-weight: 500;
+    margin: 30px 0px;
+
+    @include breakpoint(480px){
+        font-size: 42 px;
+    }
+} 

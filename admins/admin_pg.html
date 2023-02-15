@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <script src="https://kit.fontawesome.com/d1c75b4df6.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="edu_centre">
+        <button onclick="openPopStud()">Добавить образовательный центр</button>
+    </div>
+    <div class="teacher">
+        <button onclick="openPopStud2()">Добавить учителя</button>
+    </div>
+    <div class="popback b-popup-open" id="opened">
+        <div class="popUp" id="popStud">
+            <button style="border: none; outline: none; background: none; margin-top: 5%; margin-left: 90%;"
+                onclick="closePopStud()"><i class="fa-solid fa-circle-xmark" style="font-size: 30px;"></i></button>
+            <!-- <label class="photo">
+                <img class="user" src=".//img/user.svg" alt="">
+                <input type="file" id="docpicker" accept=".jpg .png .pdf" value="Ho">
+            </label> -->
+            <input id="name" type="text" class="input-field" placeholder="Название" required>
+            <input id="direction" type="text" class="input-field" placeholder="Направление" required>
+            <input id="address" type="text" class="input-field" placeholder="Адрес" required>
+            <textarea id="addinfo" class="input-field addition" placeholder="Дополнительная информация"
+                required></textarea>
+            <button class="submit" id="submitEdu" type="button">Добавить</button>
+        </div>
+    </div>
+    <div class="popback b-popup-open" id="opened2">
+        <div class="popUp" id="popStud2">
+            <button style="border: none; outline: none; background: none; margin-top: 5%; margin-left: 90%;"
+                onclick="closePopStud2()"><i class="fa-solid fa-circle-xmark" style="font-size: 30px;"></i></button>
+            <!-- <label class="photo">
+                <img class="user" src=".//img/user.svg" alt="">
+                <input type="file" id="docpicker" accept=".jpg .png .pdf" value="Ho">
+            </label> -->
+            <input id="username_tch" type="text" class="input-field" placeholder="ФИО" required>
+            <input id="email_tch" type="text" class="input-field" placeholder="Почта" required>
+            <input id="phone_tch" type="text" class="input-field" placeholder="Телефон" required>
+            <input id="teahcer_confirm" type="text" class="input-field" placeholder="Пародь" required>
+
+            <button class="submit" id="submitTeacher" type="button">Добавить</button>
+        </div>
+    </div>
+    <script>
+        let popUp = document.getElementById("popStud");
+        let popUpback = document.getElementById("opened");
+        let popUp2 = document.getElementById("popStud2");
+        let popUpback2 = document.getElementById("opened2");
+
+        function openPopStud() {
+            popUp.classList.add("open-popstud");
+            popUpback.classList.add("b-popup");
+        }
+
+        function closePopStud() {
+            popUp.classList.remove("open-popstud");
+            popUpback.classList.remove("b-popup");
+        }
+        function openPopStud2() {
+            popUp2.classList.add("open-popstud");
+            popUpback2.classList.add("b-popup");
+        }
+
+        function closePopStud2() {
+            popUp2.classList.remove("open-popstud");
+            popUpback2.classList.remove("b-popup");
+        }
+    </script>
+</body>
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.11.0/firebase-app.js";
+    import { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/9.11.0/firebase-database.js";
+    import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.11.0/firebase-auth.js";
+    const firebaseConfig = {
+        apiKey: "AIzaSyCv90cxLFxUiLM7MOx4wIebmTCCCB6ClEo",
+        authDomain: "teach2u-1c73a.firebaseapp.com",
+        projectId: "teach2u-1c73a",
+        storageBucket: "teach2u-1c73a.appspot.com",
+        messagingSenderId: "41398259175",
+        appId: "1:41398259175:web:75dafbca3b5f1c963e4142"
+    };
+
+
+
+    const app = initializeApp(firebaseConfig);
+    const database = getDatabase(app);
+    const auth = getAuth();
+    submitEdu.addEventListener('click', (e) => {
+        var name = document.getElementById("name").value
+        var direction = document.getElementById("direction").value
+        var address = document.getElementById("address").value
+        var addinfo = document.getElementById("addinfo").value
+        if (!name || !direction || !address || !addinfo) {
+
+            alert("Заполните все поля")
+
+        } else {
+            set(ref(database, 'edu_centres/'), {
+                name: name, 
+                direction: direction,
+                address: address,
+                addinfo: addinfo
+            })
+            closePopStud()
+
+        }
+    })
+    submitTeacher.addEventListener('click', (e) => {
+        
+        var username = document.getElementById("username_tch").value;
+        var email = document.getElementById("email_tch").value;
+        var password = document.getElementById("teahcer_confirm").value;
+        var phone = document.getElementById("phone_tch").value;
+        if (!username || !email || !password || !phone) {
+
+            alert("Заполните все поля")
+
+        } else {
+            createUserWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    const user = userCredential.user;
+                    set(ref(database, 'teachers/' + user.uid), {
+                        username: username,
+                        email: email,
+                        phone: phone
+                    })
+                    closePopStud2()
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    alert(errorMessage);
+                });
+
+            
+        }
+
+    })
+</script>
+
+</html>

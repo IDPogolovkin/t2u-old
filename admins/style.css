@@ -1,0 +1,135 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    
+    gap: 20px;
+}
+.edu_centre{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+}
+.teacher{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+}
+button{
+    cursor: pointer;
+    padding: 10px;
+}
+.popUp {
+    width: 400px;
+    background: #fff;
+    border-radius: 30px;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.1);
+    text-align: center;
+    padding: 0 30px 30px;
+    color: #333;
+    visibility: hidden;
+    transition: transform 0.4s, top 0.4s;
+}
+
+.open-popstud {
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    
+}
+
+.popUp h2 {
+    font-size: 20px;
+    font-weight: 400;
+    margin: 10px 0 10px;
+}
+
+.popUp p {
+    margin-top: 10px;
+    line-height: 170%;
+    font-size: 16px;
+}
+
+
+
+
+.popUp .submit {
+    width: 70%;
+    padding: 10px 0px;
+    margin-top: 30px;
+    background: #92a1d1;
+    color: #fff;
+    border: 0;
+    outline: none;
+    font-size: 17px;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+.popUp button:hover {
+    transform: translateY(+2px)
+}
+.b-popup-open{
+    display: none;
+}
+.b-popup{
+   
+    width:100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    overflow:hidden;
+    position:fixed;
+    top:0px;
+    display: block;
+}
+.popback{
+    width:100%;
+    height: 100%;
+}
+.addition {
+    height: 100px;
+    resize: none;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background: transparent;
+
+}
+
+.photo {
+    cursor: pointer;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    width: 270px;
+    height: 270px;
+    border-radius: 50%;
+    background: #92a1d1;
+}
+
+.user {
+    margin: auto 0;
+    width: 73%;
+    height: 72%;
+}

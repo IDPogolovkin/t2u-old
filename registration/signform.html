@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="rus">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignForm</title>
+    <link rel="stylesheet" href="/registration/signform.css">
+    <script src="jquery.js" type="text/javascript"></script>
+    <script src="jquery.maskedinput.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <div class="all">
+        <img class="imgtop" src="/registration/img/Element 01.svg" alt="">
+        <div class="form-box">
+            <h3 id="bilim">T2U</h3>
+            <p style="text-align: center; font-size: 13px; color: #5C5C5C; margin: auto;">Выберите тип регистрации</p>
+            <div class="button-box">
+                <div id="btn"></div>
+                <button type="button" class="toggle-btn" onclick="teach()">Ученик</button>
+                <button type="button" class="toggle-btn" onclick="student()">Учитель</button>
+            </div>
+            <div class="linktolog">
+                <a class="linktolog" href="./signUp.html">Уже есть аккаунт</a>
+            </div>
+            <div class="social-icons">
+                <img src="fb.png" alt="">
+                <img src="gp.png" alt="">
+                <img src="tw.png" alt="">
+            </div>
+
+            <!--  -->
+            <div action="/registration/email.confirmstudent.html" method="" id="student" class="input-group">
+                <input type="text" class="input-field" id='username_std' placeholder="ФИО" required>
+                <input type="email" class="input-field" id='email_std' placeholder="Электронная почта" required>
+                <input type="text" id="parentName" class="input-field" placeholder="ФИО родителя" required>
+                <input type="tel" id="phone_std" name="tel" pattern="+7[0-9]{3}-[0-9]{3}-[0-9]{4}" class="input-field"
+                    placeholder="Номер телефона родителя" required>
+                <input type="password" class="input-field" id="student_pass" onkeyup="compareStudent();"
+                    placeholder="Пароль" required>
+                <input type="password" class="input-field" id="student_confirm" onkeyup="compareStudent();"
+                    placeholder="Подтверждение пароля" required>
+                <p id="message"></p>
+                <input id="check" type="checkbox" class="check-box" placeholder="Check" required><span>Я принимаю все
+                    соглашения</span>
+
+                <button class="submit-btn" id="student_reg">Регистрация</button>
+            </div>
+            <div action="/registration/email.confirm.html" method="get" id="teacher" class="input-group">
+                <input type="text" class="input-field" id="username_tch" placeholder="ФИО" required>
+                <input type="email" class="input-field" id="email_tch" placeholder="Электронная почта" required>
+                <input type="tel" name="tel" id="phone_tch" pattern="+7[0-9]{3}-[0-9]{3}-[0-9]{4}" class="input-field"
+                    placeholder="Номер телефона" required>
+                <input type="password" class="input-field" id="teahcer_pass" onkeyup="compareTeacher();"
+                    placeholder="Пароль" required>
+                <input type="password" class="input-field" id="teahcer_confirm" onkeyup="compareTeacher();"
+                    placeholder="Подтверждение пароля" required>
+                <p id="message2"></p>
+                <input id="check2" type="checkbox" class="check-box" placeholder="Check" required><span>Я принимаю все
+                    соглашения</span>
+
+                <button class="submit-btn" id="teacher_reg">Регистрация</button>
+            </div>
+        </div>
+        <div class="footerimg">
+            <img class="imgf" src="/registration/img/backgroungimg.png" alt="">
+        </div>
+    </div>
+
+    <script>
+        var x = document.getElementById("student");
+        var y = document.getElementById("teacher");
+        var z = document.getElementById("btn");
+
+        function student() {
+            x.style.left = "-400px"
+            y.style.left = "50px"
+            z.style.left = "110px"
+        }
+        function teach() {
+            x.style.left = "50px"
+            y.style.left = "450px"
+            z.style.left = "0"
+        }
+
+        var compareStudent = function () {
+            if (document.getElementById('student_pass').value ==
+                document.getElementById('student_confirm').value) {
+                document.getElementById('message').style.color = 'green';
+                document.getElementById('message').innerHTML = 'Пароли совпадают';
+                document.getElementById('student_pass').style.borderBlockColor = 'green';
+                document.getElementById('student_confirm').style.borderBlockColor = 'green';
+                document.getElementById('student_reg').disabled = false;
+            } else {
+                document.getElementById('message').style.color = 'red';
+                document.getElementById('message').innerHTML = 'Пароли не совпадают';
+                document.getElementById('student_pass').style.borderBlockColor = 'red';
+                document.getElementById('student_confirm').style.borderBlockColor = 'red';
+                document.getElementById('student_reg').disabled = true;
+            }
+            if (document.getElementById('student_pass').value == "" || document.getElementById('student_confirm').value == "") {
+                document.getElementById('message').innerHTML = null;
+            }
+        }
+        var compareTeacher = function () {
+            if (document.getElementById('teahcer_pass').value ==
+                document.getElementById('teahcer_confirm').value) {
+                document.getElementById('message2').style.color = 'green';
+                document.getElementById('message2').innerHTML = 'Пароли совпадают';
+                document.getElementById('teahcer_pass').style.borderBlockColor = 'green';
+                document.getElementById('teahcer_confirm').style.borderBlockColor = 'green';
+                document.getElementById('teacher_reg').disabled = false;
+
+            } else {
+                document.getElementById('message2').style.color = 'red';
+                document.getElementById('message2').innerHTML = 'Пароли не совпадают';
+                document.getElementById('teahcer_pass').style.borderBlockColor = 'red';
+                document.getElementById('teahcer_confirm').style.borderBlockColor = 'red';
+                document.getElementById('teacher_reg').disabled = true;
+            }
+            if (document.getElementById('teahcer_pass').value == "" || document.getElementById('teahcer_confirm').value == "") {
+                document.getElementById('message2').innerHTML = null;
+            }
+        }
+    </script>
+</body>
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.11.0/firebase-app.js";
+    import { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/9.11.0/firebase-database.js";
+    import { getAuth, createUserWithEmailAndPassword, sendEmailVerification} from "https://www.gstatic.com/firebasejs/9.11.0/firebase-auth.js";
+    const firebaseConfig = {
+        apiKey: "AIzaSyCv90cxLFxUiLM7MOx4wIebmTCCCB6ClEo",
+        authDomain: "localhost",
+        projectId: "teach2u-1c73a",
+        storageBucket: "teach2u-1c73a.appspot.com",
+        messagingSenderId: "41398259175",
+        appId: "1:41398259175:web:75dafbca3b5f1c963e4142"
+    };
+    function goLog() {
+        document.location.href = "./signUp.html"
+    }
+    function Function() {
+        setTimeout(goLog, 3000);
+
+    }
+    const app = initializeApp(firebaseConfig);
+    const database = getDatabase(app);
+    const auth = getAuth();
+
+    student_reg.addEventListener('click', (e) => {
+        var golog = false
+        var username = document.getElementById("username_std").value;
+        var email = document.getElementById("email_std").value;
+        var password = document.getElementById("student_confirm").value;
+        var phone = document.getElementById("phone_std").value;
+        var parent = document.getElementById("parentName").value;
+        var check = document.getElementById("check")
+        if (!username || !email || !password || !phone || !parent) {
+
+            alert("Заполните все поля")
+
+        } else {
+
+            if (!check.checked) {
+                alert("Согласитесь с условиями")
+            } else {
+                createUserWithEmailAndPassword(auth, email, password)
+                    .then((userCredential) => {
+                        const user = userCredential.user;
+
+                        sendEmailVerification(auth.currentUser)
+                            .then(() => {
+                                alert("Письмо подтверждения отправлено вам на почту")
+
+                            });
+
+                        set(ref(database, 'students/' + user.uid), {
+                            email: email,
+                            phone: phone,
+                            parent: parent,
+                            displayName: username
+                        })
+                        Function();
+                    })
+                    .catch((error) => {
+                        const errorCode = error.code;
+                        const errorMessage = error.message;
+                        alert(errorMessage);
+                    });
+            }
+        }
+    })
+    teacher_reg.addEventListener('click', (e) => {
+        // var golog = false;
+        var username = document.getElementById("username_tch").value;
+        var email = document.getElementById("email_tch").value;
+        var password = document.getElementById("teahcer_confirm").value;
+        var phone = document.getElementById("phone_tch").value;
+        var check = document.getElementById("check2")
+        if (!username || !email || !password || !phone) {
+
+            alert("Заполните все поля")
+
+        } else {
+            if (!check.checked) {
+                alert("Согласитесь с условиями")
+            } else {
+                // golog = true;
+
+                createUserWithEmailAndPassword(auth, email, password)
+                    .then((userCredential) => {
+                        const user = userCredential.user;
+                        set(ref(database, 'teachers/' + user.uid), {
+                            username: username,
+                            email: email,
+                            phone: phone
+                        })
+                        Function();
+                    })
+                    .catch((error) => {
+                        const errorCode = error.code;
+                        const errorMessage = error.message;
+                        alert(errorMessage);
+                    });
+
+            }
+        }
+        // if (golog == true) {
+        //     goLog()
+        // }
+    })
+
+
+</script>
+
+</html>

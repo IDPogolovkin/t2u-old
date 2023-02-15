@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="rus">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://kit.fontawesome.com/afca038480.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <title>MainPage</title>
+</head>
+
+<body>
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light header">
+        <div style="max-width: 80%;" class="container">
+            <a class="navbar-brand" href="#">AK</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+                aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page"
+                            href="/Teacher/RegMain-teacher/html/index.html">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Teacher/Reg-subject/subject.html">Предметы</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Teacher/Reg-teachers/index.html">Преподаватели</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Teacher/Reg-support/sup.html">Поддержка</a>
+                    </li>
+                    <li class="nav-item">
+                    </li>
+                </ul>
+                <div class="icons">
+                    <button><a href="#beffooter" class="fa fa-shopping-cart" style="font-size: 20px;"></a></button>
+                    <button><a href="/Teacher/notifications/notifications.html" class="fa-solid fa-bell"
+                            style="font-size: 20px;"></a></button>
+                    <button style="color: white;">3 <a href="/Teacher/widthdrawal/widthdrawal.html"
+                            class="fa-solid fa-sack-dollar" style="font-size: 20px;"></a></button>
+                    <div class="fa-solid fa-circle-user" id="dropbuttons" style="font-size: 50px;">
+                        <div class="dropdown">
+                            <div class="dropdown-content">
+
+                                <a href="/Teacher/My-students/Students.html">Мои ученики</a>
+                                <a href="/Teacher/Schedule/html/index.html">Мое расписание</a>
+                                <a href="/Teacher/Settings-teacher/settings_teachers.html">Настройки</a>
+                                <a href="#">Выход</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-------------------------------->
+
+    <div class="container-fluid hero-section">
+        <div class="hero-row block-1">
+            <div class=" hero-text">
+                <h1 class="hero-title">Хотите набрать высокие баллы на ЕНТ?</h1>
+                <p class="hero-passage">
+                    За последние 2 года около 180 наших учеников поступили на грант в вдущие ВУЗы
+                </p>
+                <p>
+                    Пройдите бесплатную диагностику знаний и получите индивидуальный учебный план прямо сейчас!
+                </p>
+                <button class="hero-button">Пройти!</button>
+            </div>
+            <div class="block1-images">
+                <img class="hero-image2" src="../img/1block-img1.png" alt="">
+                <img class="hero-image3" src="../img/1block-img2.png" alt="">
+                <img class="hero-image4" src="../img/1block-img3.png" alt="">
+                <img class="hero-image5" src="../img/1block-img4.png" alt="">
+            </div>
+            <div class=" img1">
+                <img class="hero-image" src="../img/step.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <!-- Short Info Block -->
+
+    <div class="container-fluid short-info">
+        <div style="text-align: center;" class="row row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-3">
+            <div class="col short-card">
+                <div class="short-info-img">
+                    <img class="short-img" src="../img/choice.svg" alt="">
+                </div>
+                <h3 class="short-info-title">2 года</h3>
+                <p style="margin: 0 0 20px 0;" class="short-info-passage">
+                    В сфере онлайн образования
+                </p>
+            </div>
+            <div class="col short-card">
+                <div class="short-info-img">
+                    <img class="short-img" src="../img/tutor.svg" alt="">
+                </div>
+                <h3 class="short-info-title">2000+ студентов</h3>
+                <p class="short-info-passage">
+                    Прошли онлайн обучение
+                </p>
+            </div>
+            <div class="col short-card">
+                <div class="short-info-img">
+                    <img class="short-img" src="../img/study.svg" alt="">
+                </div>
+                <h3 class="short-info-title">84% наших учеников </h3>
+                <p class="short-info-passage1">
+                    поступили на гранты в ВУЗы и ведущие школы Казахстана
+                </p>
+            </div>
+        </div>
+        <button class="short-info-btn">Подробнее</button>
+    </div>
+
+
+    <div class="block5">
+        <img class="block5-img3" src="../img/5block-img3.png" alt="">
+        <img class="block5-img2" src="../img/5block-img2.png" alt="">
+        <h1 class="block5-heading">Что получит ученик?</h1>
+        <div class="block5-main">
+            <div class="block5-main-left">
+                <p class="block5-item">Индивидуальный учебный план </p>
+                <p class="block5-item">Уроки на трех языках </p>
+                <p class="block5-item">Учеба в онлайн формате со зрительным контактом </p>
+            </div>
+            <div class="block5-img">
+                <img class="block5-img" src="../img/5block-img1.png" alt="">
+            </div>
+            <div class="arrow-1">
+                <div></div>
+            </div>
+            <div class="block5-main-left">
+                <p class="block5-item">Индивидуальный учебный план </p>
+                <p class="block5-item">Уроки на трех языках </p>
+                <p class="block5-item">Учеба в онлайн формате со зрительным контактом </p>
+            </div>
+        </div>
+    </div>
+    <div class="block4">
+
+        <img class="block4-img2" src="../img/4block-img2.png" alt="">
+        <h1 class="block4-heading">Процесс обучения</h1>
+        <div class="block4-main">
+            <div class="block4-main-sides">
+                <p class="block4-item">1. Создай аккаунт на платформе</p>
+                <p class="block4-item-l">2. Выбери предметы которые ты хочешь изучить подтянуть</p>
+                <p class="block4-item">3. Выбери преподователя, который больше тебе подходит</p>
+            </div>
+            <div class="block5-img">
+                <img class="block4-img3" src="../img/4block-img3.png" alt="">
+                <img class="block5-img" src="../img/4block-img1.png" alt="">
+            </div>
+            <div class="block4-main-sides">
+                <p class="block4-item-r">4. Подбери удобную для тебя дату и время</p>
+                <p class="block4-item">5. Напиши пожелания к уроку (какую тему разобрать или к какому экзамену
+                    подготовиться)</p>
+                <p class="block4-item-r">6. Переходи по полученной ссылке на урок!</p>
+            </div>
+        </div>
+    </div>
+    <div class="tells" data-aos="fade-up">
+
+        <h1 class="tStudents">Что говорят наши ученики</h1>
+        <div class="testimonialsscroll">
+            <table>
+                <td>
+                    <div class="testimonials">
+
+                        <h6 class="testitext">Данный сайт помог мне освоить в совершенстве предметы, которые мне не
+                            давались в школе</h6>
+                        <table>
+                            <td>
+                                <div class="tStudentimg"></div>
+                            </td>
+                            <td class="tStudentname">Ерканат</td>
+                        </table>
+                    </div>
+                </td>
+                <td>
+                    <div class="testimonials">
+
+                        <h6 class="testitext">Данный сайт помог мне освоить в совершенстве предметы, которые мне не
+                            давались в школе</h6>
+                        <table>
+                            <td>
+                                <div class="tStudentimg"></div>
+                            </td>
+                            <td class="tStudentname">Ерканат</td>
+                        </table>
+                    </div>
+                </td>
+                <td>
+                    <div class="testimonials">
+
+                        <h6 class="testitext">Данный сайт помог мне освоить в совершенстве предметы, которые мне не
+                            давались в школе</h6>
+                        <table>
+                            <td>
+                                <div class="tStudentimg"></div>
+                            </td>
+                            <td class="tStudentname">Ерканат</td>
+                        </table>
+                    </div>
+                </td>
+                <td>
+                    <div class="testimonials">
+
+                        <h6 class="testitext">Данный сайт помог мне освоить в совершенстве предметы, которые мне не
+                            давались в школе</h6>
+                        <table>
+                            <td>
+                                <div class="tStudentimg"></div>
+                            </td>
+                            <td class="tStudentname">Ерканат</td>
+                        </table>
+                    </div>
+                </td>
+                <td>
+                    <div class="testimonials">
+
+                        <h6 class="testitext">Данный сайт помог мне освоить в совершенстве предметы, которые мне не
+                            давались в школе</h6>
+                        <table>
+                            <td>
+                                <div class="tStudentimg"></div>
+                            </td>
+                            <td class="tStudentname">Ерканат</td>
+                        </table>
+                    </div>
+                </td>
+                <td>
+                    <div class="testimonials">
+
+                        <h6 class="testitext">Данный сайт помог мне освоить в совершенстве предметы, которые мне не
+                            давались в школе</h6>
+                        <table>
+                            <td>
+                                <div class="tStudentimg"></div>
+                            </td>
+                            <td class="tStudentname">Ерканат</td>
+                        </table>
+                    </div>
+                </td>
+            </table>
+        </div>
+    </div>
+
+    <div class="before-after">
+        <h1 class="b-a-heading">Почему люди выбирают нас?</h1>
+        <div class="b-a-cards">
+            <div class="b-a-card1">
+                <h3 class="card1-heading">До Teach2U</h3>
+                <div>
+                    <p class="card1-item">Сложность при смене репетитора</p>
+                    <p class="card1-item">Не всегда есть подходящее время</p>
+                    <p class="card1-item">Привязанность к месту</p>
+                </div>
+            </div>
+            <div class="b-a-card2">
+                <h3 class="card2-heading">После Teach2U</h3>
+                <div class="card-2-bg">
+
+                    <p class="card2-item">Меняй Учителя в любой момент</p>
+                    <p class="card2-item">Выбирай удобное время</p>
+                    <p class="card2-item">Учись где угодно</p>
+                </div>
+            </div>
+
+        </div>
+        <Button class="buy-btn">Купить пакет</Button>
+    </div>
+    <!-- Subjects -->
+
+    <div style="overflow: hidden; max-width: 80%; margin: 100px auto;"
+        class="row subjects-row row-cols-1 row-cols-sm-2 row-cols-xs-2 row-cols-md-2 row-cols-lg-4">
+        <div id="card" class="col-10" data-aos="fade-right">
+            <a style="text-decoration: none;" href="/Teacher/Reg-teachers/index.html">
+                <div class="card">
+                    <img src="../img/math.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Математика</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div id="card" class="col-10" data-aos="fade-down">
+            <a style="text-decoration: none;" href="/Teacher/Reg-teachers/index.html">
+                <div class="card">
+                    <img src="../img/physics.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Физика</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div id="card" class="col-10" data-aos="fade-down">
+            <a style="text-decoration: none;" href="/Teacher/Reg-teachers/index.html">
+                <div class="card">
+                    <img src="../img/engish.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Английский язык</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div id="card" class="col-10" data-aos="fade-left">
+            <a style="text-decoration: none;" href="/Teacher/Reg-teachers/index.html">
+                <div class="card">
+                    <img src="../img/chemestry.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Химия</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div id="card" class="col-10">
+            <a style="text-decoration: none;" href="/Teacher/Reg-teachers/index.html">
+                <div class="card" data-aos="fade-right">
+                    <img src="../img/geography.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">География</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div id="card" class="col-10" data-aos="fade-up">
+            <a style="text-decoration: none;" href="/Teacher/Reg-teachers/index.html">
+                <div class="card">
+                    <img src="../img/history.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Всемирная история</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div id="card" class="col-10" data-aos="fade-up">
+            <a style="text-decoration: none;" href="/Teacher/Reg-teachers/index.html">
+                <div class="card">
+                    <img src="../img/history kz.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">История Казахстана</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div id="card" class="col-10" data-aos="fade-left">
+            <a style="text-decoration: none;" href="/Teacher/Reg-teachers/index.html">
+                <div class="card">
+                    <img src="../img/litreture.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Русская литература</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <a href="/Teacher/Reg-subject/subject.html" class="btn more">Полный список</a>
+    </div>
+
+    <div class="container-fluid statistics-block">
+        <div style="text-align: center;" class="row row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-3 stat">
+            <div class="col short-card">
+                <div class="short-info-img">
+                    <img class="short-img" src="../img/fourpic.png" alt="">
+                </div>
+                <h3 class="short-info-title stat-title">5,679</h3>
+                <p class="short-info-passage stat-pessage">
+                    Зарегистрированных учеников
+                </p>
+            </div>
+            <div class="col short-card">
+                <div class="short-info-img">
+                    <img class="short-img" src="../img/fivepic.png" alt="">
+                </div>
+                <h3 class="short-info-title stat-title">2,679</h3>
+                <p class="short-info-passage stat-pessage">
+                    Учеников, преуспевших вместе с нами
+                </p>
+            </div>
+            <div class="col short-card">
+                <div class="short-info-img">
+                    <img class="short-img" src="../img/sixpic.png" alt="">
+                </div>
+                <h3 class="short-info-title stat-title">10,000</h3>
+                <p class="short-info-passage stat-pessage">
+                    Более 10 000 посещали наш сайт
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Feedback -->
+
+
+
+    <!-- Courses -->
+    <div class="beffooter" id="beffooter">
+        <section class="bg-light text-center p-5">
+            <!-- Tittle -->
+            <div class="row text-muted text-center timer">
+                <div class="col" data-aos="fade-up">
+                    <h1 class="textcolor">Наши тарифные планы</h1>
+                    <section class="sale-countdown">
+                        <div>
+                            <h2 class="sale-text">Ограниченое предложение</h2>
+                            <div class="countdown">
+                                <div class="container-day">
+                                    <h3 class="day" style="color: black;">1</h3>
+                                    <h3>Дней</h3>
+                                </div>
+                                <div class="container-hour">
+                                    <h3 class="hour" style="color: black;">1</h3>
+                                    <h3>Часов</h3>
+                                </div>
+                                <div class="container-minute">
+                                    <h3 class="minute" style="color: black;">1</h3>
+                                    <h3>Минут</h3>
+                                </div>
+                                <div class="container-second">
+                                    <h3 class="second" style="color: black;">1</h3>
+                                    <h3>Секунд</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <!-- End of Tittle -->
+            <div class="px100">
+                <span class="box__ribon"></span>
+                <div class="row align-items-center">
+                    <div class="col-lg-4">
+                        <a style="text-decoration: none;" href="/Teacher/payment-silver/payment.html">
+                            <div class="cardd cardd-1 text-light py-4 my-4 mx-auto">
+                                <div class="cardd-body">
+                                    <h5 class="text-uppercase font-weight-bold mb-5" style="color: black !important;">
+                                        Silver </h5>
+                                    <s class="text-uppercase price"
+                                        style="font-family: 'Quattrocento', serif; font-weight: bold; font-size: 32px; color: gray !important;">
+                                        ₸ 80000 </s>
+                                    <h1 class="text-uppercase price"
+                                        style="font-family: 'Quattrocento', serif; font-weight: bold;"> ₸ 40000 </h1>
+                                    <ul class="list-unstyled"
+                                        style="color: black !important; font-size: 10px !important;">
+                                        <li class="text-uppercase py-3 cardd-list-item li-img"> Photoshop </li>
+                                        <li class="text-uppercase py-3 cardd-list-item li-img"> After Effects </li>
+                                        <li class="text-uppercase py-3 cardd-list-item li-img"> Graphic Design </li>
+                                        <li class="text-uppercase py-3 cardd-list-item border-0 li-img"> Video Montage
+                                        </li>
+                                    </ul>
+                                    <a href="/Teacher/payment-silver/payment.html" class="pressed-buttonpay"> Начать
+                                        обучение!
+                                    </a>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <a style="text-decoration: none;" href="/Teacher/payment-gold/payment.html">
+                            <div class="cardd cardd-2 text-light py-4 my-4 mx-auto">
+                                <div class="cardd-body">
+                                    <h5 class="text-uppercase font-weight-bold mb-5" style="color: black !important;">
+                                        Gold
+                                    </h5>
+                                    <s class="text-uppercase price"
+                                        style="font-family: 'Quattrocento', serif; font-weight: bold; font-size: 32px; color: gray !important;">
+                                        ₸ 120000 </s>
+                                    <h1 class="text-uppercase price"
+                                        style="font-family: 'Quattrocento', serif;  font-weight: bold;"> ₸ 70000 </h1>
+                                    <ul class="ul list-unstyled"
+                                        style="color: black !important; font-size: 10px !important;">
+                                        <li class="li text-uppercase py-3 cardd-list-item li-img"> Внеочередной ранг
+                                            ефрейтора </li>
+                                        <li class="li text-uppercase py-3 cardd-list-item li-img">5 бесплатных занятий у
+                                            любого преподавателя </li>
+                                        <li class="li text-uppercase py-3 cardd-list-item li-img">3 бесплатных занятия у
+                                            любого преподавателя </li>
+                                        <li class="li text-uppercase py-3 cardd-list-item border-0 li-img">3 бесплатных
+                                            занятия у любого преподавателя </li>
+                                    </ul>
+                                    <a href="/Teacher/payment-gold/payment.html" class="pressed-buttonpay"> Начать
+                                        обучение!
+                                    </a>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <a style="text-decoration: none;" href="/Teacher/payment-platinum/payment.html">
+                            <div class="cardd cardd-3 text-light py-4 my-4 mx-auto">
+                                <div class="cardd-body">
+                                    <h5 class="text-uppercase font-weight-bold mb-5" style="color: black !important;">
+                                        Platinum </h5>
+                                    <s class="text-uppercase price"
+                                        style="font-family: 'Quattrocento', serif; font-weight: bold; font-size: 32px; color: gray !important;">
+                                        ₸ 150000 </s>
+                                    <h1 class="text-uppercase price"
+                                        style="font-family: 'Quattrocento', serif;  font-weight: bold; "> ₸ 90000 </h1>
+                                    <ul class="list-unstyled"
+                                        style="color: black !important; font-size: 10px !important;">
+                                        <li class="text-uppercase py-3 cardd-list-item li-img"> Photoshop </li>
+                                        <li class="text-uppercase py-3 cardd-list-item li-img"> After Effects </li>
+                                        <li class="text-uppercase py-3 cardd-list-item li-img"> Graphic Design </li>
+                                        <li class="text-uppercase py-3 cardd-list-item border-0 li-img"> Video Montage
+                                        </li>
+                                    </ul>
+                                    <a href="/Teacher/payment-platinum/payment.html" class="pressed-buttonpay"> Начать
+                                        обучение!
+                                    </a>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <a style="text-decoration: none;" href="#">
+                        <div class="cardd cardd-3 text-light py-4 my-4 mx-auto">
+                            <div class="cardd-body">
+                                <h5 class="text-uppercase font-weight-bold mb-5" style="color: black !important;"> Для
+                                    социльно уязвимых слоев</h5>
+                                <h1 class="text-uppercase price"
+                                    style="font-family: 'Quattrocento', serif;  font-weight: bold; "> ₸ 0</h1>
+                                <ul class="list-unstyled" style="color: black !important; font-size: 10px !important;">
+                                    <li class="text-uppercase py-3 cardd-list-item li-img"> Благотворительные уроки
+                                    </li>
+                                    <li class="text-uppercase py-3 cardd-list-item li-img"> Выбор учитилей из зеленого
+                                        списка </li>
+                                    <li class="text-uppercase py-3 cardd-list-item li-img"> Занятия от 2 раз в неделю
+                                    </li>
+                                </ul>
+                                <a href="#" class="pressed-buttonpay">
+                                    Начать обучение! </a>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <footer class="bg-dark text-center text-white" style="width: 100vw !important; ">
+            <!-- Grid container -->
+            <div class="container p-4 pb-0">
+                <!-- Section: Form -->
+                <section class="">
+                    <form class="signup-form" style="width: 100%" action="">
+                        <!--Grid row-->
+                        <div class="row d-flex justify-content-center">
+                            <!--Grid column-->
+                            <div class="col-auto">
+                                <p class="pt-2">
+                                    <strong>Подписаться на рассылку</strong>
+                                </p>
+                            </div>
+                            <!--Grid column-->
+
+                            <!--Grid column-->
+                            <div class="col-md-5 col-12">
+                                <!-- Email input -->
+                                <div class="form-outline form-white mb-4">
+                                    <input type="email" id="form5Example29" class="form-control" />
+                                    <label class="form-label" for="form5Example29">Email address</label>
+                                </div>
+                            </div>
+                            <!--Grid column-->
+
+                            <!--Grid column-->
+                            <div class="col-auto">
+                                <!-- Submit button -->
+                                <button type="submit" class="btn btn-outline-light mb-4">
+                                    Subscribe
+                                </button>
+                            </div>
+                            <!--Grid column-->
+                        </div>
+                        <!--Grid row-->
+                    </form>
+                </section>
+                <!-- Section: Form -->
+            </div>
+            <!-- Grid container -->
+
+            <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                © 2022 Copyright:
+                <a class="text-white" href="#">ak.kz</a>
+            </div>
+            <!-- Copyright -->
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script src="/Teacher/RegMain-teacher/js/script.js"></script>
+</body>
+
+</html>

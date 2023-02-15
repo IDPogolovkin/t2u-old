@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="rus">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+    <script src="https://kit.fontawesome.com/afca038480.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Quattrocento+Sans:wght@700&family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/d1c75b4df6.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Navbar</title>
+    <script>
+        $(function() {
+            $("#calendar").datepicker({
+                dateFormat: "dd.mm.yy",
+                inline: true,
+                firstDay: 1,
+                showOtherMonths: true,
+                prevText: "Пред",
+                nextText: "След",
+                dayNamesMin: ['Bс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
+                monthNames: ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"],
+                onSelect: function(event, ui) {
+                    var selected = $(this).datepicker('getDate');
+                    var d = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Bоскресенье']
+                    $('.schedule-day').html(d[selected.getUTCDay()]);
+                    var selected = $(this).val();
+                    $('.schedule-date').html(selected);
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="all">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light header">
+            <div style="max-width: 80%;" class="container">
+                <a class="navbar-brand" href="#">Teach2U</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+                    aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarScroll">
+                    <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page"
+                                href="/Teacher/RegMain-teacher/html/index.html">Главная</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Teacher/Reg-subject/subject.html">Предметы</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Teacher/Reg-teachers/index.html">Преподаватели</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Teacher/Reg-support/sup.html">Поддержка</a>
+                        </li>
+                        <li class="nav-item">
+                        </li>
+                    </ul>
+                    <div class="icons">
+                        <button class="nav-link-btn"><a href="/Teacher/RegMain-teacher/html/index.html#beffooter" class="fa fa-shopping-cart"
+                                style="font-size: 20px;"></a></button>
+                        <button class="nav-link-btn"><a href="/Teacher/notifications/notifications.html"
+                                class="fa-solid fa-bell" style="font-size: 20px;"></a></button>
+                        <button style="color: white;" class="nav-link-btn">3 <a href="/Teacher/widthdrawal/widthdrawal.html"
+                                class="fa-solid fa-sack-dollar" style="font-size: 20px;"></a></button>
+                        <div class="fa-solid fa-circle-user " id="dropbuttons">
+                            <div class="dropdown">
+                                <div class="dropdown-content">
+    
+                                    <a href="/Teacher/My-students/Students.html">Мои ученики</a>
+                                    <a href="/Teacher/Schedule/html/index.html">Мое расписание</a>
+                                    <a href="/Teacher/Settings-teacher/settings_teachers.html">Настройки</a>
+                                    <a href="#">Выход</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="main">
+            <div id="calendar" type="date">
+            </div>
+            <div class="schedule">
+                <div class="schedule-picked-date">
+                    <div class=" schedule-day ">День</div>
+                    <div class="schedule-date ">ДД.ММ.ГГ</div>
+                </div>
+                <div class="timeSetter">
+                    <div class="example">
+                        <div class="schedule-time ">
+                            <input type="time" name="from">
+                            <input type="time" name="to">
+                        </div>
+                        <div cclass="listbtn" style="font-size: 50px;">
+                            <select class=" listbtn ">
+                                <option class="textbtn" value="0">Физика</option>
+                                <option class="textbtn" value="0">Mатематика</option>
+                                <option class="textbtn" value="1">Высшая математика</option>
+                            </select>
+                        </div>
+                        <div class="delete">
+                            <button>
+                                <a href="#" id="x" class="fa-solid fa-circle-xmark"></a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="add">
+                    <button>
+                        <a href="#" id="add" class="fa-solid fa-circle-plus"></a>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <footer style="margin-top: auto;" class="footer ">
+            <div class="footer_main ">
+                <div class="info-footer ">
+                    <div class="infotext ">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    </div>
+                    <div class="footerimg ">
+                        <i class="fa-brands fa-facebook "> </i>
+                        <i class="fa-brands fa-instagram "> </i>
+                        <i class="fa-brands fa-vk "> </i>
+                        <i class="fa-brands fa-whatsapp "> </i>
+                    </div>
+                </div>
+                <div class="flinks ">
+                    <h2 class="l ">Ссылки</h2>
+                    <a class="link " href=" ">Главная</a>
+                    <a class="link " href=" ">Описаниеы</a>
+                    <a class="link " href=" ">Преподаватели</a>
+                    <a class="link " href=" ">Помощь</a>
+                </div>
+                <div class="contact ">
+                    <h2 class="l ">Связаться с нами</h2>
+                    <span class="link ">Phone number</span>
+                    <a class="link " href=" ">WEB-site</a>
+                    <span class="link ">Email</span>
+                    <span class="link ">Office</span>
+
+                </div>
+                <div class="faq ">
+                    <a class="link " href=" ">FAQ</a>
+                </div>
+            </div>
+            <div class="footer_bot ">
+                <div class="rights ">
+                    All Rights Reserved | T2U 2022
+                </div>
+                <div class="p ">
+                    <a class="pp " href=" ">Private Policy</a>
+                    <div class="private ">
+                        Site <a class="credit " href=" ">Credit</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+    <script>
+        function takeLesson() {
+            document.getElementById("circle ").style.color = "red ";
+        }
+    </script>
+    <div id="somth"></div>
+    <script>
+        window.onload = function () {
+            function value(x, y) {
+                return (x + (Math.random() * (y - x)));
+            }
+            var object = " ";
+            for (var i = 0; i < 50; i++) {
+                var a = value(8, 25);
+                object += '<div class="object" style="height: ' + a + 'px; width: ' + a + 'px; background-color: rgba(' + value(0, 300) + ',' + value(0, 300) + ',' + value(0, 300) + '); animation-duration:' + value(10, 30) + 's; top: ' + value(0, 100) + '%; left: ' + value(0, 100) + '%;"></div>'
+            }
+            document.getElementById("somth").innerHTML = object;
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="../js/script.js "></script>
+</body>
+
+</html>
